@@ -118,8 +118,8 @@ export default function SwipeableTemporaryDrawer() {
   );
 
   return (
-    <div>
-        <React.Fragment sx={{m: 0}}>
+    <Box sx={{m: 0}}>
+        
             <Button onClick={toggleDrawer('left', true)}><MenuIcon style={{ fill: '#FFF' }} /></Button>
 
             <SwipeableDrawer
@@ -130,7 +130,7 @@ export default function SwipeableTemporaryDrawer() {
             >
                 {list('left')}
             </SwipeableDrawer>
-        </React.Fragment>
-    </div>
+        
+    </Box>
   );
 }
