@@ -157,7 +157,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Sidenav />
           <Typography
