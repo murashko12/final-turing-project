@@ -10,13 +10,14 @@ function App() {
 
     return (
         <>
-            <Routes>
-                <Route path={''} element={<Layout/>}>
+            <Layout/>
+            <div style={{margin: "70px 3%"}}>
+                <Routes>
                     <Route path={'/'} element={<MainPage/>}/>
                     <Route path={'/about'} element={<AboutPage/>}/>
                     <Route path={'/courses'} element={<CoursesPage/>}/>
-                </Route>
-            </Routes>
+                </Routes>
+            </div>
         </>
     )
 }
