@@ -18,7 +18,21 @@ import ArticleIcon from '@mui/icons-material/Article';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HelpIcon from '@mui/icons-material/Help';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Modal, Typography } from '@mui/material';
+import styled from 'styled-components';
+
+const SettingModal = styled(Modal)({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+})
+
+const SignOutModal = styled(Modal)({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+})
 
 export default function SwipeableTemporaryDrawer() {
   
@@ -27,8 +41,15 @@ export default function SwipeableTemporaryDrawer() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-      setState({ ...state, [anchor]: open });
+    setState({ ...state, [anchor]: open });
   };
+
+  // ========================================================================
+
+  const [openSettings, setOpenSettings] = React.useState(false) // settings modal
+  const [openSignOut, setOpenSignOut] = React.useState(false)  // sign out modal
+  
+  // ========================================================================
 
   const listSidenav1 = [
     {
@@ -58,7 +79,7 @@ export default function SwipeableTemporaryDrawer() {
   ]
 
   const list = (anchor) => (
-
+    
     <Box
       sx={{ 
           width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, 
@@ -72,6 +93,8 @@ export default function SwipeableTemporaryDrawer() {
         onKeyDown={toggleDrawer(anchor, false)}
       
     >
+      
+
       
       <List>
         {listSidenav1.map(({id, text, link, icon}) => (
@@ -111,7 +134,10 @@ export default function SwipeableTemporaryDrawer() {
           </ListItemButton>
         </ListItem>
 
-        <ListItem disablePadding>
+        <ListItem 
+          disablePadding
+          onClick={e => setOpenSignOut(true)}  
+        >
           <ListItemButton>
             <ListItemIcon>
               <LogoutIcon/>
@@ -121,6 +147,9 @@ export default function SwipeableTemporaryDrawer() {
         </ListItem>
         
       </List>
+
+      
+
     </Box>
   );
 
@@ -137,6 +166,48 @@ export default function SwipeableTemporaryDrawer() {
             >
                 {list('left')}
             </SwipeableDrawer>
+
+            
+
+
+
+
+
+            <SignOutModal
+              open={openSignOut}
+              onClose={e => setOpenSignOut(false)}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+          
+              <Box 
+                width={400} 
+                height={200} 
+                bgcolor="white" 
+                p={3} 
+                borderRadius={5} 
+                display="flex" 
+                flexDirection="column"
+                justifyContent="space-between"
+              >
+
+                <Typography variant="h6" color="gray" textAlign="center">
+                  Вы действительно хотите выйти из аккаунта?
+                </Typography>
+
+                <Box 
+                  display="flex"
+                  justifyContent="space-around"
+                >
+
+                  <Button onClick={e => setOpenSignOut(false)} variant="outlined" color="error">Выйти</Button>
+                  <Button onClick={e => setOpenSignOut(false)} variant="outlined">Отменить</Button>
+
+                </Box>
+
+              </Box>
+
+            </SignOutModal>
         
     </Box>
   );
