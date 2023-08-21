@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import SchoolIcon from '@mui/icons-material/School';
+import ArticleIcon from '@mui/icons-material/Article';
 
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -47,6 +48,12 @@ export default function SwipeableTemporaryDrawer() {
       text: 'Курсы',
       link: '/courses',
       icon: <SchoolIcon/> 
+    },
+    {
+      id: 4,
+      text: 'Новости',
+      link: '/news',
+      icon: <ArticleIcon/> 
     },
   ]
 

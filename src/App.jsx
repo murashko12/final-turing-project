@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage'
 import AboutPage from './pages/AboutPage'
 import Layout from './components/Layout/Layout'
 import CoursesPage from './pages/CoursesPage'
+import NewsPage from './pages/NewsPage'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
                     <Route path={'/'} element={<MainPage/>}/>
                     <Route path={'/about'} element={<AboutPage/>}/>
                     <Route path={'/courses'} element={<CoursesPage/>}/>
+                    <Route path={'/news'} element={<NewsPage/>}/>
                 </Routes>
             </div>
         </>
