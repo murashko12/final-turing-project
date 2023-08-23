@@ -17,6 +17,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import Sidenav from './Sidenav'
 import { Button, ButtonGroup, FormControl, InputAdornment, InputLabel, Modal, OutlinedInput, TextField } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import LoginSignUp from './LoginSignUp';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -238,54 +239,7 @@ export default function PrimarySearchAppBar() {
                 justifyContent: "center"
               }}
             >
-              <Box width={400} 
-                height="auto" 
-                bgcolor="white" 
-                p={3} 
-                borderRadius={5} 
-                display="flex" 
-                flexDirection="column"
-                justifyContent="space-between"
-              >
-                <ButtonGroup
-                  disableElevation
-                  variant="contained"
-                  aria-label="Disabled elevation buttons"
-                >
-                  <Button sx={{height: "45px", width: "50%", p: "10px"}} variant="contained">вход</Button>
-                  <Button sx={{height: "45px", width: "50%", p: "10px"}} variant="contained">регистрация</Button>
-                </ButtonGroup>
-                <Box>
-                  <Box >
-                  
-                    <TextField sx={{ width: "100%", marginTop: "10px"}} id="outlined-basic" label="Логин" variant="outlined" />
-
-                    <FormControl sx={{ width: '100%', marginTop: "10px" }} variant="outlined">
-                      <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
-                      <OutlinedInput
-                        id="outlined-adornment-password"
-                        type={showPassword ? 'text' : 'password'}
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseDownPassword}
-                              edge="end"
-                            >
-                              {showPassword ? <VisibilityOff /> : <Visibility />}
-                            </IconButton>
-                          </InputAdornment>
-                        }
-                        label="Password"
-                      />
-                    </FormControl>
-                    
-                    <Button sx={{height: "45px",width: "100%", marginTop: "10px", p: "10px"}} variant="contained">Войти</Button>
-
-                  </Box>
-                </Box>
-              </Box>
+              <LoginSignUp />
             </Modal>
             
 
