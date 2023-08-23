@@ -19,7 +19,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HelpIcon from '@mui/icons-material/Help';
 import { Link } from 'react-router-dom';
-import { Modal, Typography } from '@mui/material';
+import { IconButton, Modal, Typography } from '@mui/material';
 import styled from 'styled-components';
 
 const DownModals = styled(Modal)({
@@ -150,7 +150,11 @@ export default function SwipeableTemporaryDrawer() {
   return (
     <Box sx={{m: 0}}>
         
-            <Button onClick={toggleDrawer('left', true)}><MenuIcon style={{ fill: '#FFF' }} /></Button>
+            <Button onClick={toggleDrawer('left', true)}>
+              <IconButton>
+                <MenuIcon style={{ fill: '#FFF' }} />
+              </IconButton>
+            </Button>
 
             <SwipeableDrawer
                 anchor={'left'}

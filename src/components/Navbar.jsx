@@ -18,7 +18,7 @@ import Sidenav from './Sidenav'
 import { Button, ButtonGroup, FormControl, InputAdornment, InputLabel, Modal, OutlinedInput, TextField } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import LoginSignUp from './LoginSignUp';
-
+import TranslateIcon from '@mui/icons-material/Translate';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -192,10 +192,17 @@ export default function PrimarySearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Поиск…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <IconButton
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
+            <TranslateIcon/>
+          </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             
