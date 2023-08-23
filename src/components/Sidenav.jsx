@@ -22,17 +22,12 @@ import { Link } from 'react-router-dom';
 import { Modal, Typography } from '@mui/material';
 import styled from 'styled-components';
 
-const SettingModal = styled(Modal)({
+const DownModals = styled(Modal)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center"
 })
 
-const SignOutModal = styled(Modal)({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center"
-})
 
 export default function SwipeableTemporaryDrawer() {
   
@@ -82,16 +77,15 @@ export default function SwipeableTemporaryDrawer() {
     
     <Box
       sx={{ 
-          width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, 
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between'
-        }}
-        role="presentation"
-        onClick={toggleDrawer(anchor, false)}
-        onKeyDown={toggleDrawer(anchor, false)}
-      
+        width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, 
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}  
     >
       
 
@@ -103,7 +97,7 @@ export default function SwipeableTemporaryDrawer() {
               <ListItemIcon>
                 {icon}
               </ListItemIcon>
-              <Link to={link} style={{ textDecoration: 'none', color: 'black' }}>
+              <Link to={link} style={{ textDecoration: 'none', color: '#616161' }}>
                 <ListItemText primary={text} />
               </Link>
             </ListItemButton>
@@ -121,7 +115,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <SettingsIcon/>
             </ListItemIcon>
-            <ListItemText primary={'Настройки'} />
+            <ListItemText primary={'Настройки'} style={{color: '#616161'}}/>
           </ListItemButton>
         </ListItem>
 
@@ -130,7 +124,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <HelpIcon/>
             </ListItemIcon>
-            <ListItemText primary={'Помощь'} />
+            <ListItemText primary={'Помощь'} style={{color: '#616161'}}/>
           </ListItemButton>
         </ListItem>
 
@@ -142,7 +136,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <LogoutIcon/>
             </ListItemIcon>
-            <ListItemText primary={'Выход'} />
+            <ListItemText primary={'Выход'} style={{color: '#616161'}}/>
           </ListItemButton>
         </ListItem>
         
@@ -167,13 +161,14 @@ export default function SwipeableTemporaryDrawer() {
                 {list('left')}
             </SwipeableDrawer>
 
-            
 
 
+{/* ================================================================================================ */}
+          
+{/* ================================================================================================ */}
 
-
-
-            <SignOutModal
+{/* ================================================================================================ */}
+            <DownModals
               open={openSignOut}
               onClose={e => setOpenSignOut(false)}
               aria-labelledby="modal-modal-title"
@@ -207,8 +202,8 @@ export default function SwipeableTemporaryDrawer() {
 
               </Box>
 
-            </SignOutModal>
-        
+            </DownModals>
+{/* ================================================================================================ */}
     </Box>
   );
 }

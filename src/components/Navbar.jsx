@@ -9,14 +9,15 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Sidenav from './Sidenav'
-import { Button } from '@mui/material';
+import { Button, ButtonGroup, FormControl, InputAdornment, InputLabel, Modal, OutlinedInput, TextField } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -62,6 +63,8 @@ export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  const [open, setOpen] = React.useState(false)
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -80,6 +83,14 @@ export default function PrimarySearchAppBar() {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   const menuId = 'primary-search-account-menu';
@@ -159,9 +170,6 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
-      
-      
-      
     </Menu>
   );
 
@@ -215,9 +223,72 @@ export default function PrimarySearchAppBar() {
             >
               <AccountCircle />
             </IconButton>
-
             
-            <Button variant="outlined" color="inherit">dfsfsdf</Button>
+            <Button onClick={e => setOpen(true)} variant="outlined" color="inherit">Войти</Button>
+
+
+            <Modal
+              open={open}
+              onClose={e => setOpen(false)}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <Box width={400} 
+                height="auto" 
+                bgcolor="white" 
+                p={3} 
+                borderRadius={5} 
+                display="flex" 
+                flexDirection="column"
+                justifyContent="space-between"
+              >
+                <ButtonGroup
+                  disableElevation
+                  variant="contained"
+                  aria-label="Disabled elevation buttons"
+                >
+                  <Button sx={{height: "45px", width: "50%", p: "10px"}} variant="contained">вход</Button>
+                  <Button sx={{height: "45px", width: "50%", p: "10px"}} variant="contained">регистрация</Button>
+                </ButtonGroup>
+                <Box>
+                  <Box >
+                  
+                    <TextField sx={{ width: "100%", marginTop: "10px"}} id="outlined-basic" label="Логин" variant="outlined" />
+
+                    <FormControl sx={{ width: '100%', marginTop: "10px" }} variant="outlined">
+                      <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
+                      <OutlinedInput
+                        id="outlined-adornment-password"
+                        type={showPassword ? 'text' : 'password'}
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <IconButton
+                              aria-label="toggle password visibility"
+                              onClick={handleClickShowPassword}
+                              onMouseDown={handleMouseDownPassword}
+                              edge="end"
+                            >
+                              {showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
+                          </InputAdornment>
+                        }
+                        label="Password"
+                      />
+                    </FormControl>
+                    
+                    <Button sx={{height: "45px",width: "100%", marginTop: "10px", p: "10px"}} variant="contained">Войти</Button>
+
+                  </Box>
+                </Box>
+              </Box>
+            </Modal>
+            
+
             
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -236,6 +307,7 @@ export default function PrimarySearchAppBar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+
     </Box>
   );
 }
