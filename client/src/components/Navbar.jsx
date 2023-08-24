@@ -15,8 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Sidenav from './Sidenav'
-import { Button, ButtonGroup, FormControl, InputAdornment, InputLabel, Modal, OutlinedInput, TextField } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Button, Modal } from '@mui/material';
 import LoginSignUp from './LoginSignUp';
 import TranslateIcon from '@mui/icons-material/Translate';
 

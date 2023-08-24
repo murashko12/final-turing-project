@@ -20,8 +20,11 @@ const Step1 = () => {
     return (
     
         <Box>
+            
             <TextField sx={{ width: "100%", marginTop: "10px"}} id="outlined-basic" label="Имя" variant="outlined" />
             <TextField sx={{ width: "100%", marginTop: "10px"}} id="outlined-basic" label="Фамилия" variant="outlined" />
+            <TextField sx={{ width: "100%", marginTop: "10px"}} id="outlined-basic" label="Email" variant="outlined" />
+
             <FormControl sx={{ width: '100%', marginTop: "10px" }} variant="outlined">
                 <InputLabel>Пароль</InputLabel>
                 <OutlinedInput

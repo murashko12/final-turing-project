@@ -150,11 +150,11 @@ export default function SwipeableTemporaryDrawer() {
   return (
     <Box sx={{m: 0}}>
         
-            <Button onClick={toggleDrawer('left', true)}>
-              <IconButton>
+            {/* <Button onClick={toggleDrawer('left', true)}> */}
+              <IconButton onClick={toggleDrawer('left', true)}>
                 <MenuIcon style={{ fill: '#FFF' }} />
               </IconButton>
-            </Button>
+            {/* </Button> */}
 
             <SwipeableDrawer
                 anchor={'left'}

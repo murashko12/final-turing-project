@@ -74,7 +74,7 @@ const SignupForm = () => {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>Ожидайте ответа на вашу электронную почту</Typography>
+          <Typography>Ожидайте письмо на вашу электронную почту</Typography>
           <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }} variant="contained" color="success">
             OK
           </Button>
