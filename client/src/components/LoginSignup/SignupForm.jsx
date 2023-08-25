@@ -12,7 +12,7 @@ import Step2 from './SignupSteps/Step2';
 
 const SignupForm = () => {
 
-  // =========== Step1
+  // =========== Step1 ===========
   const [name, setName] = React.useState()
   const [lastName, setLastName] = React.useState()
   const [email, setEmail] = React.useState()
@@ -24,7 +24,7 @@ const SignupForm = () => {
     .then(result => console.log(result))
     .catch(err => console.log(err))
   }
-  // =========== Step2
+  // =========== Step2 =========== 
   // const []
 
 
