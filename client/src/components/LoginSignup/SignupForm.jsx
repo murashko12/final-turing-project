@@ -10,14 +10,45 @@ import Typography from '@mui/material/Typography';
 import Step1 from './SignupSteps/Step1';
 import Step2 from './SignupSteps/Step2';
 
-const steps = [
+const SignupForm = () => {
+
+  // =========== Step1
+  const [name, setName] = React.useState()
+  const [lastName, setLastName] = React.useState()
+  const [email, setEmail] = React.useState()
+  const [password, setPassword] = React.useState()
+  const [passwordRep, setPasswordRep] = React.useState()
+  const handleSubmit = (e) => {
+    e.preventDefaul()
+    axios.post('http://localhost:3001/turing-final', {name,lastName,email,password,passwordRep})
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
+  }
+  // =========== Step2
+  // const []
+
+
+
+  const steps = [
     {
         label: 'Шаг 1',
-        inputFields: <Step1/>
+        inputFields: <Step1
+          name={name}
+          lastName={lastName}
+          email={email}
+          password={password}
+          passwordRep={passwordRep}
+          setName={setName}
+          setLastName={setLastName}
+          setEmail={setEmail}
+          setPassword={setPassword}
+          setPasswordRep={setPasswordRep}
+          handleSubmit={handleSubmit}
+        />
     },
     {
         label: 'Шаг 2',
-        inputFields: <Step2/>
+        inputFields: <Step2 />
     },
     {
         label: 'Шаг 3',
@@ -25,7 +56,14 @@ const steps = [
     },
 ];
 
-const SignupForm = () => {
+
+
+
+
+
+
+
+
     const [activeStep, setActiveStep] = React.useState(0);
 
     const handleNext = () => {
@@ -40,11 +78,15 @@ const SignupForm = () => {
         setActiveStep(0);
     };
 
+    
+
+
+
     return (
         <Box sx={{ maxWidth: 400 }}>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
-          <Step key={step.label}>
+          <Step  key={step.label}>
             <StepLabel>
               {step.label}
             </StepLabel>
