@@ -2,6 +2,18 @@ import { Box, Divider, Grid, Paper, Typography } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components';
 import mpeiLogo from '../Images/MrTuring.png'
+
+import MishaGasin from '../Images/MishaGasin.jpeg'
+import Mesnyankin from '../Images/Mesnyankin.jpeg'
+import PashaZhukov from '../Images/PashaZhukov.jpeg'
+import SashaKobzev from '../Images/SashaKobzev.jpeg'
+import SonyaMarchinskaya from '../Images/SonyaMarchinskaya.jpeg'
+import SashaFofanov from '../Images/SashaFofanov.jpeg'
+import SashaGordov from '../Images/SashaGordov.jpeg'
+
+
+
+
 const AboutPage = () => {
     
       
@@ -20,7 +32,7 @@ const AboutPage = () => {
                 Так, если наши друзья решат пойти работать в IT-сферу, они будут начинать не с нуля и не бояться незнакомых профессиональных слов, а вместо этого понимать, что, зачем и для чего.
             </Typography>
 
-            <Typography variant="h3" fontWeight={400} color={"#006aff"} textAlign={"center"}>Кто такой Тьюрин?г</Typography>
+            <Typography variant="h3" fontWeight={400} color={"#006aff"} textAlign={"center"}>Кто такой Тьюринг?</Typography>
             <Box display="flex" justifyContent="space-between">
                 <Box sx={{width: "80%"}}>
                     <Typography variant="h5" fontWeight={400} color={"#595959"} textAlign={"justify"}>
@@ -40,7 +52,20 @@ const AboutPage = () => {
                 </Box>
             </Box>
             <Divider sx={{borderBottomWidth: 3,margin: "30px 0px"}} />
-            
+            <Box>
+                <Typography variant="h3" fontWeight={400} color={"#006aff"} textAlign={"center"}>Наш коллектив</Typography>
+                <Box>
+                    <img height={"330px"} src={MishaGasin} alt="" />
+                    <img height={"330px"} src={Mesnyankin} alt="" />
+                    <img height={"330px"} src={PashaZhukov} alt="" />
+                    <img height={"330px"} src={SashaKobzev} alt="" />
+                </Box>    
+                <Box >
+                    <img height={"330px"} src={SonyaMarchinskaya} alt="" />
+                    <img height={"330px"} src={SashaFofanov} alt="" />
+                    <img height={"330px"} src={SashaGordov} alt="" />
+                </Box>
+            </Box>
         </>
     )
 }
