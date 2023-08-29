@@ -18,6 +18,8 @@ import Sidenav from './Sidenav'
 import { Button, Modal } from '@mui/material';
 import LoginSignUp from './LoginSignUp';
 import TranslateIcon from '@mui/icons-material/Translate';
+import { Link } from 'react-router-dom';
+import LOGO from '../Images/turingLogo.jpeg'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -178,14 +180,12 @@ export default function PrimarySearchAppBar() {
       <AppBar position="fixed">
         <Toolbar>
           <Sidenav />
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            Turing
-          </Typography>
+          <Link to={'/'}>
+          
+          <Box objectFit="contain" sx={{ borderRadius: '50%' }}>
+          <img  height={"35px"}  src={LOGO} alt="" />
+          </Box>
+          </Link>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
