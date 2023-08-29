@@ -9,6 +9,6 @@
 
 `git clone https://github.com/murashko12/final-turing-project.git`
 
-1) Переходим в папку :file_folder client: `cd client`
+1) Переходим в папку :file_folder: client `cd client`
 2) Устанавливаем необходимые пакеты для запуска самого проекта: `npm i`
 3) Запускаем проект на localhost: `npm run dev`
